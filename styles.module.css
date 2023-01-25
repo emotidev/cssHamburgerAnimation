@@ -1,10 +1,59 @@
-.hello {
-  font: 15px Helvetica, Arial, sans-serif;
-  background: #eee;
-  padding: 100px;
-  text-align: center;
-  transition: 100ms ease-in background;
+.main {
+  background: #1a1a1a;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.hello:hover {
-  background: #ccc;
+
+.nav {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #0a0a0a;
+  transition: all 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.icon {
+  scale: 6;
+  transition: all 1.1s ease;
+  z-index: 51;
+}
+
+.icon:hover {
+  transform: translateY(-2%) scale(1.2) rotate(360deg);
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: all .7s ease;
+  font-family: sans-serif;
+  padding: 1rem 2rem;
+  margin: 2rem;
+  border-radius: .2rem;
+  background: #1a1a1a;
+  font-size: 2rem;
+}
+
+.link:hover {
+  --skew: 5deg;
+  background: #fff;
+  color: #1a1a1a;
+  transform: perspective(1000px) rotateX(360deg) scale(4) translateY(-2%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) skew(var(--skew), var(--skew));
+}
+
+.link:nth-child(2n) {
+  --skew: -5deg;
 }
